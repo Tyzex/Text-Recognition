@@ -14,11 +14,13 @@ class ShowText(object):
             new.title("Extracted Text")
             new.geometry("300x300")
             label = Label(new, text=self.txt)
+            btn = Button(new, text="Copy-Text-to-Clipboard", command=lambda :new.clipboard_append(self.txt))
             # label = Entry(new, bd=0, state="readonly")
             # label.configure(textvariable=txt)
             # label.place(height=200, width=200)
             # label.insert(new, self.text)
             label.pack()
+            btn.pack()
         else:
             self.root.title("Something Went Wrong")
             self.root.geometry("200x200")
